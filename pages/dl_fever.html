@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+        Classification of Fever Temperature Patterns using Deep Learning
+        | Anirudh Prabhakaran
+    </title>
+    <script
+        src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <style>
+        body,
+        html {
+            font-family: "Inter", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="h-2 bg-black"></div>
+    <div class="h-16 bg-slate-50 border border-slate-200 flex items-center">
+        <h1 class="text-2xl mx-auto w-5/6 lg:w-1/2">
+            <a href="../index.html" class="hover:underline">
+                Anirudh Prabhakaran
+            </a>
+        </h1>
+    </div>
+    <div class="mx-auto w-5/6 lg:w-1/2 my-10">
+        <div>
+            <h1 class="text-5xl font-medium">
+                Classification of Fever Temperature Patterns using Deep Learning
+            </h1>
+        </div>
+        <div class="prose max-w-none my-10">
+            <p>
+                View the code <a href="https://github.com/anirudhprabhakaran3/extemp"
+                    class="underline text-blue-600">here</a>.
+            </p>
+            <p>
+                View the paper here: <a href="https://arxiv.org/abs/2402.16865" class="underline text-blue-600">
+                    Prabhakaran, A., Xiao, Y., Cheng, C.-Y., & Liu, D. (2024). Improve Robustness of Eye Disease
+                    Detection by including Learnable Probabilistic Discrete Latent Variables into Machine Learning
+                    Models. ArXiv Preprint ArXiv:2402.16865.
+                </a>
+            </p>
+        </div>
+        <h1 class="mt-10 mb-5 text-3xl">Abstract</h1>
+        <div class="prose max-w-none">
+            <p>
+                Tympanic temperature is one of the most fundamental indicators for diagnoses of diseases. In a hospital
+                setting, temperature is a fundamental metric that tracks a patient's status. Due to its importance,
+                it would be very useful to use temperature data of patients to aid in the diangostic process. However,
+                it is quite hard to predict diseases from just fever patterns. In this project, we work towards two
+                problem statements:
+            </p>
+            <ul>
+                <li>
+                    Try to predict disease given fever temperature data.
+                </li>
+                <li>
+                    Try to identify the distinct, characteristic patterns in temperature information for various
+                    diseases.
+                </li>
+            </ul>
+            <p>
+                We introduce three new models for Explainable Temperature analysis -
+                <strong>ExTempConv-SM</strong>, <strong>ExTempConv-LG</strong>, and <strong>ExTemp-Auto</strong>. Along with this, we use explainable AI tools to try to
+                identify distinguishing patterns in temperature fluctuations that can characterize diseases. Using
+                GradCAM, we note the distinct temperature patterns that are unique to particular diseases.
+            </p>
+        </div>
+        <h1 class="mt-10 mb-5 text-3xl">Method</h1>
+        <div class="prose max-w-none">
+            <p>
+                We provide two such models, named <strong>ExTempConv-SM</strong> and <strong>ExTempConv-LG</strong>.
+                Both of these are based on
+                convolution blocks, followed by a fully connected neural network to perform classification. The
+                difference in the two models comes from slight differences in the architecture, leading to a difference
+                in the number of parameters for each model.
+            </p>
+            <figure class="my-5">
+                <img src="../assets/dl_fever/extempconvsm.webp" alt="ExTempConv-LG Model Diagram">
+                <figcaption class="text-center">Figure 1 - ExTempConv-SM Model</figcaption>
+            </figure>
+
+            <figure class="my-5"></figure>
+            <img src="../assets/dl_fever/extempconvlg.webp" alt="ExTempConv-LG Model Diagram">
+            <figcaption class="text-center">Figure 2 - ExTempConv-LG Model</figcaption>
+            </figure>
+            <p>
+                There has also been previous work to denote that convolution blocks act as an effective method for
+                dimensionality reduction. We explore this idea more, and look at other promising methods for
+                dimensionality reductions. Using the same thought process, we replace the convolution blocks in our
+                proposed network with the encoder block of an autoencoder. This is the motivation behind the third model
+                - <strong>ExTemp-Auto</strong>.
+            </p>
+            <figure class="my-5"></figure>
+            <img src="../assets/dl_fever/extempauto.webp" alt="ExTemp-Auto Model Diagram">
+            <figcaption class="text-center">Figure 3 - ExTemp-Auto Model</figcaption>
+            </figure>
+        </div>
+        <h1 class="mt-10 mb-5 text-3xl">Results</h1>
+        <div class="prose max-w-none">
+            <p>
+                We note that the best model performance is achieved by the ExTempConvLG model (70%).
+            </p>
+            <table class="table-auto">
+                <thead>
+                    <tr class="text-left">
+                        <th>model</th>
+                        <th>precision</th>
+                        <th>recall</th>
+                        <th>f1-score</th>
+                        <th>accuracy</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>ExTempConv-SM</td>
+                        <td>0.62</td>
+                        <td>0.55</td>
+                        <td>0.62</td>
+                        <td>0.65</td>
+                    </tr>
+                    <tr>
+                        <td>ExTempConv-LG</td>
+                        <td>0.60</td>
+                        <td>0.57</td>
+                        <td>0.55</td>
+                        <td>0.70</td>
+                    </tr>
+                    <tr>
+                        <td>ExTemp-Auto</td>
+                        <td>0.56</td>
+                        <td>0.52</td>
+                        <td>0.51</td>
+                        <td>0.52</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>
+                We also apply GradCAM to our models to try to understand which unique tempearture patterns are
+                characteristic for particular diseases. We note these patterns generated from ExTempConv-LG.
+            </p>
+            <figure class="my-5"></figure>
+            <img src="../assets/dl_fever/extempconvlg_Dengue.webp" alt="ExTemp-Auto Model Diagram">
+            <figcaption class="text-center">Figure 4 - Dengue Temperature Analysis</figcaption>
+            </figure>
+
+            <figure class="my-5"></figure>
+            <img src="../assets/dl_fever/extempconvlg_Tuberculosis.webp" alt="ExTemp-Auto Model Diagram">
+            <figcaption class="text-center">Figure 5 - Tuberculosis Temperature Analysis</figcaption>
+            </figure>
+
+            <figure class="my-5"></figure>
+            <img src="../assets/dl_fever/extempconvlg_Non_Infectious_Diseases.webp" alt="ExTemp-Auto Model Diagram">
+            <figcaption class="text-center">Figure 6 - Non-Infectious Diseases Temperature Analysis</figcaption>
+            </figure>
+
+            <figure class="my-5"></figure>
+            <img src="../assets/dl_fever/extempconvlg_Non_Tubercular_Bacterial_Diseases.webp"
+                alt="ExTemp-Auto Model Diagram">
+            <figcaption class="text-center">Figure 7 - Non-Tubercular Bacterial Diseases Temperature Analysis
+            </figcaption>
+            </figure>
+        </div>
+    </div>
+    <div class="mt-10 bg-black text-white h-16 flex items-center justify-center">
+        <div class="text-center">
+            &copy; Anirudh Prabhakaran, 2024
+        </div>
+    </div>
+</body>
+
+</html>
