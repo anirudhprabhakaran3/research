@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anirudh Prabhakaran</title>
+    <script
+        src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <style>
+        body,
+        html {
+            font-family: "Inter", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="h-2 bg-black"></div>
+    <div class="h-16 flex items-center justify-center bg-slate-50 border border-slate-200">
+        <h1 class="text-3xl">
+            <a href="index.html" class="hover:underline">
+                Anirudh Prabhakaran
+            </a>
+        </h1>
+    </div>
+    <div class="mx-auto w-5/6 lg:w-1/2 my-10">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-5">
+            <div class="flex justify-center items-center flex-col gap-5">
+                <div>
+                    <img src="./assets/pic.jpeg" class="h-96 rounded-lg" />
+                </div>
+                <div>
+                    <p>
+                        <a href="mailto:apml2304@gmail.com"
+                            class="underline text-blue-600 mx-1 font-bold">apml2304@gmail.com</a>
+                        <a href="https://linkedin.com/in/anirudhprabhkaran"
+                            class="underline text-blue-600 mx-1 font-bold">Linkedin</a>
+                    </p>
+                </div>
+            </div>
+            <div class="flex flex-col gap-3">
+                <p>
+                    Hello! I recently graduated from the National Institute of Technology
+                    Karnataka (NITK), Surathkal, India with a major in Electronics and
+                    Communications Engineering, and a minor in Computer Science Engineering.
+                    My interests lie mainly in <strong>Computer Vision</strong> and
+                    <strong>Reinforcement Learning</strong>, and its applications like in
+                    healthcare.
+                </p>
+                <p>
+                    Currently, I am working remotely as a research intern under the guidance
+                    of:
+                </p>
+                <ul class="list-disc">
+                    <li>
+                        <strong>Prof. Dianbo Liu</strong> at the
+                        <strong><a href="https://www.cogai4sci.com/" class="text-blue-600 underline">Cognitive AI for
+                                Science
+                                (CogAI4Sci) Lab</a></strong>, National University of Singapore. I am working on
+                        <strong>Generative Flow Networks (GFlowNets)</strong>
+                        and their applications in various areas like mixture of experts
+                        models, healthcare, etc.
+                    </li>
+                    <li>
+                        <strong>Xingjian Li</strong> and <strong>Prof. Min Xu</strong> at the
+                        <strong><a href="https://xulabs.github.io/" class="text-blue-600 underline">Xu Lab</a></strong>,
+                        Carnegie Mellon University. I am working on developing algorithms
+                        and techniques for automated segmentation and decomposition of
+                        <strong>cryo-ET</strong> images.
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="my-10">
+            <h1 class="text-3xl font-bold">Projects</h1>
+            <div class="my-3 grid grid-cols-1 md:grid-cols-2 gap-3">
+                <div>
+                    <a href="#" class="group relative block h-64 sm:h-80 lg:h-96">
+                        <span class="absolute inset-0 border-2 border-dashed border-black"></span>
+
+                        <div
+                            class="relative flex h-full transform items-end border-2 border-black bg-white transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2">
+                            <div
+                                class="p-4 !pt-0 transition-opacity group-hover:absolute group-hover:opacity-0 sm:p-6 lg:p-8">
+                                <img src="./assets/svgs/magnifying-glass.svg" class="size-12">
+
+                                <h2 class="mt-4 text-xl font-medium sm:text-2xl">Image Decomposition</h2>
+                            </div>
+
+                            <div
+                                class="absolute p-4 opacity-0 transition-opacity group-hover:relative group-hover:opacity-100 sm:p-6 lg:p-8">
+                                <h3 class="mt-4 text-xl font-medium sm:text-2xl">Image Decomposition</h3>
+
+                                <p class="mt-4 text-sm sm:text-base">
+                                    Using automated techniques for segmentation in cryo-ET images.
+                                </p>
+
+                                <!-- <p class="mt-8 font-bold">Read more</p> -->
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div>
+                    <a href="#" class="group relative block h-64 sm:h-80 lg:h-96">
+                        <span class="absolute inset-0 border-2 border-dashed border-black"></span>
+
+                        <div
+                            class="relative flex h-full transform items-end border-2 border-black bg-white transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2">
+                            <div
+                                class="p-4 !pt-0 transition-opacity group-hover:absolute group-hover:opacity-0 sm:p-6 lg:p-8">
+                                <img src="./assets/svgs/fever.svg" class="size-12">
+
+                                <h2 class="mt-4 text-xl font-medium sm:text-2xl">Fever Temperature Analysis</h2>
+                            </div>
+
+                            <div
+                                class="absolute p-4 opacity-0 transition-opacity group-hover:relative group-hover:opacity-100 sm:p-6 lg:p-8">
+                                <h3 class="mt-4 text-xl font-medium sm:text-2xl">Fever Temperature Analysis</h3>
+
+                                <p class="mt-4 text-sm sm:text-base">
+                                    Using Deep Learning to find distinctive patterns in various diseases.
+                                </p>
+
+                                <!-- <p class="mt-8 font-bold">Read more</p> -->
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div>
+                    <a href="#" class="group relative block h-64 sm:h-80 lg:h-96">
+                        <span class="absolute inset-0 border-2 border-dashed border-black"></span>
+
+                        <div
+                            class="relative flex h-full transform items-end border-2 border-black bg-white transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2">
+                            <div
+                                class="p-4 !pt-0 transition-opacity group-hover:absolute group-hover:opacity-0 sm:p-6 lg:p-8">
+                                <img src="./assets/svgs/eye.svg" class="size-12">
+
+                                <h2 class="mt-4 text-xl font-medium sm:text-2xl">GFlowOut for Eye Images</h2>
+                            </div>
+
+                            <div
+                                class="absolute p-4 opacity-0 transition-opacity group-hover:relative group-hover:opacity-100 sm:p-6 lg:p-8">
+                                <h3 class="mt-4 text-xl font-medium sm:text-2xl">GFlowOut for Eye Images</h3>
+
+                                <p class="mt-4 text-sm sm:text-base">
+                                    Using GFlowOut to improve robustness and interpretibility of eye disease detection
+                                    models.
+                                </p>
+
+                                <!-- <p class="mt-8 font-bold">Read more</p> -->
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="my-10">
+            <h1 class="text-3xl font-bold mb-5">Publications</h1>
+            <ul class="list-disc">
+                <li>
+                    Prabhakaran, A., Xiao, Y., Cheng, C.-Y., & Liu, D. (2024). Improve Robustness of Eye Disease
+                    Detection
+                    by including Learnable Probabilistic Discrete Latent Variables into Machine Learning Models. ArXiv
+                    Preprint ArXiv:2402.16865. <a href="https://arxiv.org/abs/2402.16865"
+                        class="underline text-blue-600 mx-1">[Link]</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="mt-10 bg-black text-white h-16 flex items-center justify-center">
+        <div class="text-center">
+            &copy; Anirudh Prabhakaran, 2024
+        </div>
+    </div>
+</body>
+
+</html>
